@@ -1,0 +1,52 @@
+{% extends 'app/base.html' %}
+
+{% block contenido %}
+
+    <div class="container body">
+        <br>
+        <h3>Libro : Crear</h3>            
+        <br>
+
+        <div class="">
+            <label style="color: rgb(9, 77, 80);font-size: large;">{{mensaje}}</label>
+        </div>
+
+        <form action="{% url 'libro_create' %}" method="POST">{% csrf_token%}
+            <div class="form-group">                        
+                <div class="col-md-12">
+                    <label>Nombre <b class="text-danger">*</b></label>
+                    <input class="form-control" type="text" name="Nombre" required="true"/>
+                </div>
+            </div>  
+            <div class="form-group">                        
+                <div class="col-md-12">
+                    <label>Autor <b class="text-danger">*</b></label>
+                    <input class="form-control" type="text" name="Autor" required="true"/>
+                </div>
+            </div> 
+            <div class="form-group">                        
+                <div class="col-md-12">
+                    <label>Precio <b class="text-danger">*</b></label>
+                    <input class="form-control" type="number" name="Precio" required="true"/>
+                </div>
+            </div> 
+            <div class="form-group">                        
+                <div class="col-md-12">
+                    <label>Stock <b class="text-danger">*</b></label>
+                    <input class="form-control" type="number" name="Stock" required="true"/>
+                </div>
+            </div> 
+            <div class="form-group">                        
+                <div class="col-md-12">
+                    <label>Fecha de publicación <b class="text-danger">*</b></label>
+                    <input class="form-control" type="date" name="Publicacion" required="true"/>
+                </div>
+            </div> 
+            <div class="col-md-12">
+                <input class="btn btn-primary" type="submit" name="accion" value="Registrar"/>
+                <a href="#t" class="btn btn-danger"> Cancelar</a>
+            </div>
+        </form>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends 'app/base.html' %}
+
+{% block contenido %}
+
+    <div class="container body">
+        <br>
+        <h1>Libros</h1>
+
+        <div class="">
+            <label style="color: rgb(9, 77, 80);font-size: large;">{{mensaje}}</label>
+        </div>
+        <br>
+        <table class="table">
+            <tr>
+                <th>Nombre</th>
+                <th>Autor</th>
+                <th>Precio</th>
+                <th>Stock</th>
+                <th>Publicación</th>
+                <th></th>
+            </tr>
+            {% for libro in libros %}
+            <tr>
+                <td>{{ libro.Nombre }}</td>
+                <td>{{ libro.Autor }}</td>
+                <td>{{ libro.Precio }}</td>
+                <td>{{ libro.Stock }}</td>
+                <td>{{ libro.Publicacion }}</td>
+                <td class="text-right">
+                    <div class="dropdown">
+                        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Opciones
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">Editar</a>
+                            <a class="dropdown-item" href="#">Eliminar</a>   
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+
+{% endblock %}
